@@ -1,83 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/fitapplogo"
+    android:background="@color/lavender"
+    android:gravity="center"
     tools:context=".SignupActivity">
 
-    <LinearLayout
+
+    <EditText
+        android:id="@+id/kayit_ol_nickname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="380dp"
-            android:padding="20dp">
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
 
 
-            <EditText
-                android:layout_width="350dp"
-                android:layout_height="60dp"
-                android:id="@+id/signup_email"
-                android:background="@drawable/lavender_border"
-                android:layout_marginTop="30dp"
-                android:padding="8dp"
-                android:hint="Email"
-                android:drawableLeft="@drawable/ic_launcher_foreground"
-                android:drawablePadding="8dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:hint="Mail"
+        android:textAlignment="center"
+        android:layout_marginTop="15dp"
+        android:inputType="textEmailAddress"
+        android:id="@+id/kayit_ol_mail"
+        android:layout_height="wrap_content"/>
 
-            <EditText
-                android:layout_width="350dp"
-                android:layout_height="60dp"
-                android:id="@+id/signup_password"
-                android:background="@drawable/lavender_border"
-                android:layout_marginTop="20dp"
-                android:padding="8dp"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:drawableLeft="@drawable/ic_launcher_foreground"
-                android:drawablePadding="8dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:hint="Password"
+        android:textAlignment="center"
+        android:layout_marginTop="15dp"
+        android:inputType="textPassword"
+        android:id="@+id/kayit_ol_password"
+        android:layout_height="wrap_content"/>
 
-            <EditText
-                android:id="@+id/signup_confirm"
-                android:layout_width="350dp"
-                android:layout_height="59dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/lavender_border"
-                android:drawableLeft="@drawable/ic_launcher_foreground"
-                android:drawablePadding="8dp"
-                android:hint="Confirm Password"
-                android:inputType="textPassword"
-                android:padding="8dp" />
-
-            <Button
-                android:layout_width="350dp"
-                android:layout_height="70dp"
-                android:text="Sign Up"
-                android:id="@+id/signup_button"
-                android:textSize="18sp"
-                android:layout_marginTop="30dp"
-                app:cornerRadius = "30dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:onClick="kayitOl"
+        android:hint="Register"
+        android:layout_marginTop="30dp"/>
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/loginRedirectText"
-                android:text="Already an user? Login"
-                android:layout_gravity="center"
-                android:padding="8dp"
-                android:textSize="18sp"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/lavender"/>
 
-        </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+
+
+</LinearLayout>
