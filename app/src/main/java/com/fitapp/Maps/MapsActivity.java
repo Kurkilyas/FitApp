@@ -1,4 +1,4 @@
-package com.fitapp;
+package com.fitapp.Maps;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
