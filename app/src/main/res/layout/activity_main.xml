@@ -10,41 +10,10 @@
     tools:openDrawer="start"
     tools:context=".MainActivity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-||||||| e90f68c
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-=======
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.452"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.325" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="newPage"
-        android:text="Button"
-        tools:layout_editor_absoluteX="154dp"
-        tools:layout_editor_absoluteY="324dp" />
->>>>>>> origin/main
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
@@ -59,7 +28,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/frame_layout"/>
-
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -72,14 +40,9 @@
         app:itemIconTint="@color/lavender"
         app:itemTextColor="@color/lavender"/>
 
-
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
-
+        android:layout_height="match_parent">
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
@@ -98,7 +61,6 @@
                 android:background="@android:color/transparent"
                 app:labelVisibilityMode="labeled"
                 app:menu="@menu/bottom_menu" />
-
         </com.google.android.material.bottomappbar.BottomAppBar>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -109,11 +71,7 @@
             app:layout_anchor="@id/bottomAppBar"
             app:maxImageSize="40dp"
             android:id="@+id/fab"
-            app:tint="@color/lavender"
-            />
-
+            app:tint="@color/lavender"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
 
 </androidx.drawerlayout.widget.DrawerLayout>
