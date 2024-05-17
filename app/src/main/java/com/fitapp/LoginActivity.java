@@ -7,6 +7,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -50,6 +51,10 @@ public class LoginActivity extends AppCompatActivity {
 
     TextView forgotPassword;
 
+    SharedPreferences sharedPreferences;
+    private static final String Shared_prefence_name="mypref";
+    private static final String Key_Email="email";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,9 +63,10 @@ public class LoginActivity extends AppCompatActivity {
 
         editEmail= (EditText) findViewById(R.id.giris_mail);
         editPassword =(EditText) findViewById(R.id.giris_password);
-        editUpdateName = (EditText) findViewById(R.id.giris_guncelle);
-        editUpdatePassword = (EditText) findViewById(R.id.giris_password_guncelle);
+
         forgotPassword = findViewById(R.id.forgot_password);
+        sharedPreferences=getSharedPreferences(Shared_prefence_name,MODE_PRIVATE);
+
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -87,11 +93,16 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(AuthResult authResult) {
                             mUser = mAuth.getCurrentUser();
+                                SharedPreferences.Editor editor=sharedPreferences.edit();
+                                editor.putString(Key_Email,editEmail.getText().toString());
+                                editor.apply();
+
 
                             assert mUser != null;
                             verileriGetir(mUser.getUid());
 
-
+                            Intent intent = new Intent(LoginActivity.this, MainActivityTemp.class);
+                           startActivity(intent);
 
                         }
                     }).addOnFailureListener(this, new OnFailureListener() {
@@ -131,7 +142,12 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+public void uyeOl(View view)
+{
 
+    Intent intent=new Intent(LoginActivity.this,SignupActivity.class);
+    startActivity(intent);
+}
     private void veriGuncelle(HashMap<String,Object> hashMap, final String uid){
 
     mReference = FirebaseDatabase.getInstance().getReference("Users").child(uid);
@@ -256,6 +272,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    
+
 
 }

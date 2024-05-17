@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+   >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+        <!-- İçerik buraya eklenebilir -->
+    </LinearLayout>
+
+    <Chronometer
+        android:id="@+id/kronometre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="50sp"
+        android:textColor="#040404"
+        android:background="@drawable/headerbkg"
+        android:padding="16dp"
+        android:gravity="center"
+        android:layout_marginTop="-50dp"/>
+
+    <Button
+        android:id="@+id/basladur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Başla"
+        android:layout_below="@id/kronometre"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textSize="24sp"
+        android:textColor="#FFC107"
+        />
+
+    <Button
+        android:id="@+id/restart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yeniden Başla"
+        android:layout_below="@id/basladur"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="24sp"
+        android:textColor="#FF9800"
+        />
+
+</RelativeLayout>

@@ -8,21 +8,21 @@
         android:icon="@drawable/ic_home"/>
 
     <item
-        android:id="@+id/shorts"
-        android:title="Shorts"
+        android:id="@+id/maps"
         android:icon="@drawable/ic_launcher_foreground"
-        />
+        android:title="Map" />
 
     <item
         android:title=""/>
 
     <item
-        android:id="@+id/subscriptions"
-        android:title="Subscriptions"
+        android:id="@+id/header_music"
+        android:title="Music"
         android:icon="@drawable/ic_launcher_foreground" />
     <item
-        android:id="@+id/library"
-        android:title="Library"
-        android:icon="@drawable/ic_launcher_foreground" />
+        android:id="@+id/weather_forecast"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="Weather Forecast" />
+
 
 </menu>

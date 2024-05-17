@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/lavender"
+    android:background="@drawable/fit_app"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".SignupActivity">
 
 
@@ -15,39 +14,45 @@
         android:id="@+id/kayit_ol_nickname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_view"
         android:hint="Name"
+        android:layout_marginTop="150dp"
         android:inputType="textPersonName"
+        android:padding="10dp"
         android:textAlignment="center" />
 
-
     <EditText
-        android:layout_width="match_parent"
-        android:hint="Mail"
-        android:textAlignment="center"
-        android:layout_marginTop="15dp"
-        android:inputType="textEmailAddress"
         android:id="@+id/kayit_ol_mail"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_view"
+        android:hint="Mail"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:textAlignment="center" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:hint="Password"
-        android:textAlignment="center"
-        android:layout_marginTop="15dp"
-        android:inputType="textPassword"
         android:id="@+id/kayit_ol_password"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_view"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:rotationX="2"
+        android:textAlignment="center" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_view"
         android:onClick="kayitOl"
-        android:hint="Register"
-        android:layout_marginTop="30dp"/>
-
-
-
-
+        android:padding="15dp"
+        android:text="Register"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 
 </LinearLayout>

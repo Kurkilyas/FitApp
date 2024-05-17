@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#71C5EC"
+    tools:context=".WeatherMainActivity">
+
+    <!-- Arka plan resmi olarak bir bulut veya güneş gibi hava durumu temalı bir görsel -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/textview_background" />
+
+    <!-- Başlık -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WEATHER"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        android:textStyle="bold"/>
+
+    <!-- Şehir girişi -->
+    <EditText
+        android:id="@+id/cityName"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="#CE6BDF"
+        android:hint="Enter City"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textAlignment="center"/>
+
+    <!-- Arka plan rengi ve metin rengi güzel uyumlu olan buton -->
+    <Button
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cityName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Search"
+        android:textSize="20sp"
+        android:background="#7A57BA"/>
+
+    <!-- Konumuma göre hava butonu -->
+    <Button
+        android:id="@+id/buton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Konumuma Göre Hava"
+        android:textSize="20sp"
+        android:background="#7A57BA"/>
+
+    <!-- Hava durumu bilgilerini gösterecek CardView -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buton"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <TextView
+            android:id="@+id/weather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

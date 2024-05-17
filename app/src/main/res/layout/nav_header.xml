@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="176dp"
-    android:gravity="bottom"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
     android:padding="16dp"
-    android:background="@drawable/headerbkg"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    android:background="@drawable/headerbkg">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -15,18 +15,18 @@
         android:src="@drawable/bg_view"/>
 
     <TextView
+        android:id="@+id/edit_Mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mehmet Emin Burak Öksüz"
-        android:textColor="@color/white"
-        android:textStyle="bold"/>
+
+    android:textColor="@color/white"
+    android:textStyle="bold"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="meboksuz02@gmail.com"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        android:layout_marginBottom="16dp"/>
+        android:id="@+id/editMailtex"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:text="asldklasd"></TextView>
+
 
 </LinearLayout>
