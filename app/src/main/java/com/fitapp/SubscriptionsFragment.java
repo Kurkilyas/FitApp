@@ -31,44 +31,14 @@ public class SubscriptionsFragment extends Fragment implements SensorEventListen
 
     private static final int REQUEST_ACTIVITY_RECOGNITION_PERMISSION_CODE = 1;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     public SubscriptionsFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SubscriptionsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SubscriptionsFragment newInstance(String param1, String param2) {
-        SubscriptionsFragment fragment = new SubscriptionsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
@@ -99,6 +69,11 @@ public class SubscriptionsFragment extends Fragment implements SensorEventListen
         } else {
             sensorManager.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_NORMAL);
         }
+
+        if (stepSensor == null) {
+            Toast.makeText(requireContext(), "Cihazınız adım sayar sensörünü desteklemiyor", Toast.LENGTH_LONG).show();
+            return;
+        }
     }
 
     @Override
@@ -110,9 +85,14 @@ public class SubscriptionsFragment extends Fragment implements SensorEventListen
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_STEP_COUNTER) {
-            stepCount = (int) event.values[0];
+            if (stepCount == 0) {
+                stepCount = (int) event.values[0];
+            } else {
+                stepCount = (int) event.values[0] - stepCount;
+            }
             updateStepCountText();
         }
+
     }
 
     @Override
@@ -125,10 +105,8 @@ public class SubscriptionsFragment extends Fragment implements SensorEventListen
     }
 
     private void resetStepCount() {
-        sensorManager.unregisterListener(this);
         stepCount = 0;
         updateStepCountText();
-        sensorManager.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
@@ -142,16 +120,4 @@ public class SubscriptionsFragment extends Fragment implements SensorEventListen
             }
         }
     }
-//    private fun checkSensorSupport() {
-//        val sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
-//        val stepSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
-//
-//        if (stepSensor == null) {
-//            // Cihaz adım sayar sensörünü desteklemiyor
-//            Toast.makeText(this, "Cihazınız adım sayar sensörünü desteklemiyor", Toast.LENGTH_SHORT).show()
-//        } else {
-//            // Cihaz adım sayar sensörünü destekliyor
-//            // Gerekli işlemleri yapın
-//        }
-//    }
 }
